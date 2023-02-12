@@ -30,7 +30,7 @@ const Gameboard = () => {
     { id: 11, name: 'Troy Barnes', image: Troy },
   ]);
 
-  return <div>Gameboard</div>;
+  return <div className='gameboard'>Gameboard</div>;
 };
 
 export default Gameboard;
