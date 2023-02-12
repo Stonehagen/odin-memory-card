@@ -1,8 +1,11 @@
 import './styles/App.css';
+import Gameboard from './components/Gameboard';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
+      <div>Placeholder Header</div>
+      <Gameboard />
     </div>
   );
 }
