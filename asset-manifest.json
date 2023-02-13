@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ab7c7bde.css",
+    "main.js": "/static/js/main.df3cf388.js",
+    "static/media/pierce-hawthorne.jpeg": "/static/media/pierce-hawthorne.43a0d5cc9fa1a83a87b0.jpeg",
+    "static/media/elroy-patashnik.jpeg": "/static/media/elroy-patashnik.8464c20cbe36f1cbc715.jpeg",
+    "static/media/craig-pelton.jpeg": "/static/media/craig-pelton.026c0d38d99050d7076b.jpeg",
+    "static/media/jeff-winger.jpeg": "/static/media/jeff-winger.392c05eb5bb3b09f2918.jpeg",
+    "static/media/abed-nadir.jpeg": "/static/media/abed-nadir.c445a28952c3932159a4.jpeg",
+    "static/media/buzz-hickey.jpeg": "/static/media/buzz-hickey.15bac09639ea8ee5a57f.jpeg",
+    "static/media/shirley-bennett.jpeg": "/static/media/shirley-bennett.4e72d7e1afe57cc89d26.jpeg",
+    "static/media/frankie-dart.jpeg": "/static/media/frankie-dart.a7e9df837d7bffc832a3.jpeg",
+    "static/media/troy-barnes.jpeg": "/static/media/troy-barnes.a0fb623bd20734793f86.jpeg",
+    "static/media/britta-perry.jpeg": "/static/media/britta-perry.8cce74b71506bc4b1cf0.jpeg",
+    "static/media/seor-chang.jpeg": "/static/media/seor-chang.71a88aac2f954b43244d.jpeg",
+    "static/media/annie-edison.jpeg": "/static/media/annie-edison.535e3fdeb46a6cd0d8a7.jpeg",
+    "index.html": "/index.html",
+    "main.ab7c7bde.css.map": "/static/css/main.ab7c7bde.css.map",
+    "main.df3cf388.js.map": "/static/js/main.df3cf388.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab7c7bde.css",
+    "static/js/main.df3cf388.js"
+  ]
+}
