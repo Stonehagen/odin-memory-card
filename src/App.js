@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './styles/App.css';
 import Gameboard from './components/Gameboard';
+import Header from './components/header';
 
 const App = () => {
   const [score, setScore] = useState(0);
@@ -20,19 +21,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <div>
-        <h1>Community Memory Game</h1>
-        <h4>
-          Get points by clicking on an image but don't click on any more than
-          once!
-        </h4>
-        <p>Score:{score}</p>
-        <p>Highscore:{highScore}</p>
-      </div>
+      <Header score={score} highScore={highScore}/>
       <Gameboard
         incrementScore={incrementScore}
         resetScore={resetScore}
-        score={score}
       />
     </div>
   );

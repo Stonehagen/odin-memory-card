@@ -1,0 +1,28 @@
+.card {
+  background-color: rgb(251, 207, 163);
+  text-align: center;
+  padding: 10px;
+  border-radius: 25px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px 5px rgb(253, 161, 25);
+  background-color: rgb(251, 179, 128);
+  cursor: pointer;
+}
+
+.card img {
+  max-width: 98%;
+  max-height: 90%;
+  border-radius: 20px;
+}
+
+.card h3 {
+  padding: 0;
+  margin: 5px 0;
+  color: rgb(73, 56, 81);
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

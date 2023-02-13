@@ -1,0 +1,30 @@
+.header {
+  color: rgb(251, 207, 163);
+  padding: 0 20px;
+}
+
+.header h1 {
+  text-align: center;
+  text-shadow: 0 0 20px rgb(253, 161, 25);
+  font-size: 3em;
+  margin: 10px 0;
+}
+
+.subheader {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+}
+
+.subheader p {
+  margin: 0;
+}
+
+.subheader h3 {
+  margin: 0;
+}
+
+.scores {
+  text-align: right;
+  padding-right: 30px;
+}

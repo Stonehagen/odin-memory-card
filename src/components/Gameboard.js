@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
+import '../styles/Gameboard.css'
 import {
   Abed,
   Annie,
@@ -15,7 +16,7 @@ import {
   Troy,
 } from '../img/imageIndex';
 
-const Gameboard = ({ incrementScore, resetScore, score }) => {
+const Gameboard = ({ incrementScore, resetScore }) => {
   const [memory, setMemory] = useState([]);
   const [cards, setCards] = useState([
     { id: 0, name: 'Abed Nadir', image: Abed },
@@ -41,14 +42,22 @@ const Gameboard = ({ incrementScore, resetScore, score }) => {
     return arrAsSet.size !== array.length;
   };
 
+  const newGame = () => {
+    resetScore();
+    clearMemory();
+  };
+
+  const nextRound = (array) => {
+    setMemory(array);
+      incrementScore();
+  }
+
   const addToMemory = (id) => {
     const newMemomory = memory.concat([id]);
     if (hasDoubles(newMemomory)) {
-      resetScore();
-      clearMemory();
+      newGame();
     } else {
-      setMemory(newMemomory);
-      incrementScore();
+      nextRound(newMemomory);
     }
   };
 
@@ -63,17 +72,15 @@ const Gameboard = ({ incrementScore, resetScore, score }) => {
 
   useEffect(() => {
     shuffleCards();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [memory]);
 
   return (
     <div className="gameboard">
       {cards.map((card) => {
-        const props = {
-          card: card,
-          addToMemory: addToMemory,
-        };
-        return <Card key={'card' + card.id} props={props} />;
+        return (
+          <Card key={'card' + card.id} card={card} addToMemory={addToMemory} />
+        );
       })}
     </div>
   );
