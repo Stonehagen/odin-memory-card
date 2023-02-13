@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Card from './Card';
 import {
   Abed,
   Annie,
@@ -14,8 +15,9 @@ import {
   Troy,
 } from '../img/imageIndex';
 
-const Gameboard = () => {
-  const [cards] = useState([
+const Gameboard = ({ incrementScore, resetScore, score }) => {
+  const [memory, setMemory] = useState([]);
+  const [cards, setCards] = useState([
     { id: 0, name: 'Abed Nadir', image: Abed },
     { id: 1, name: 'Annie Edison', image: Annie },
     { id: 2, name: 'Britta Perry', image: Britta },
@@ -30,7 +32,51 @@ const Gameboard = () => {
     { id: 11, name: 'Troy Barnes', image: Troy },
   ]);
 
-  return <div className='gameboard'>Gameboard</div>;
+  const clearMemory = () => {
+    setMemory([]);
+  };
+
+  const hasDoubles = (array) => {
+    const arrAsSet = new Set(array);
+    return arrAsSet.size !== array.length;
+  };
+
+  const addToMemory = (id) => {
+    const newMemomory = memory.concat([id]);
+    if (hasDoubles(newMemomory)) {
+      resetScore();
+      clearMemory();
+    } else {
+      setMemory(newMemomory);
+      incrementScore();
+    }
+  };
+
+  const shuffleCards = () => {
+    const copyCards = [...cards];
+    for (let i = copyCards.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [copyCards[i], copyCards[j]] = [copyCards[j], copyCards[i]];
+    }
+    setCards(copyCards);
+  };
+
+  useEffect(() => {
+    shuffleCards();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [memory]);
+
+  return (
+    <div className="gameboard">
+      {cards.map((card) => {
+        const props = {
+          card: card,
+          addToMemory: addToMemory,
+        };
+        return <Card key={'card' + card.id} props={props} />;
+      })}
+    </div>
+  );
 };
 
 export default Gameboard;

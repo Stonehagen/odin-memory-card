@@ -7,9 +7,10 @@ const App = () => {
   const [highScore, setHighScore] = useState(0);
 
   const incrementScore = () => {
-    setScore(score + 1);
-    if (score > highScore) {
-      setHighScore(score);
+    const newScore = score + 1;
+    setScore(newScore);
+    if (newScore > highScore) {
+      setHighScore(newScore);
     }
   };
 
@@ -25,8 +26,14 @@ const App = () => {
           Get points by clicking on an image but don't click on any more than
           once!
         </h4>
+        <p>Score:{score}</p>
+        <p>Highscore:{highScore}</p>
       </div>
-      <Gameboard incrementScore={incrementScore} resetScore={resetScore} />
+      <Gameboard
+        incrementScore={incrementScore}
+        resetScore={resetScore}
+        score={score}
+      />
     </div>
   );
 };
